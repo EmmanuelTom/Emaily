@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const bodyParser = require("body-parser")
 const passport = require('passport');
-const path = require('path');
+
 
 
 require('./models/user');
@@ -34,9 +34,10 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
 
   // Handle React routing, return all requests to React app (Express 5 / path-to-regexp v6 compatible)
-  // app.get('(.*)', (req, res) => {
-  //   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  // });
+  const path = require('path');
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
 }
 
 const PORT = process.env.PORT || 8000;
