@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cokkieSession = require('cookie-session');
 const bodyParser = require("body-parser")
 const passport = require('passport');
+const path = require('path');
 require('./models/user');
 require("./services/passport");
 
