@@ -34,8 +34,8 @@ if (true) {
   // Serve static assets (main.js, main.css) in production
   app.use(express.static('client/build'))
   
-  // Handle React routing, return all requests to React app
-  app.get('*', (req, res) => {
+  // Handle React routing, return all requests to React app (Express 5 / path-to-regexp v6 compatible)
+  app.get('(.*)', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }

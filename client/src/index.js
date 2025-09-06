@@ -29,6 +29,6 @@ root.render(
     <App />
 </Provider>);
 
-console.log("Environment Variables:");
-console.log("REACT_APP_STRIPE_KEY:", process.env.REACT_APP_STRIPE_KEY);
-console.log("NODE_ENV:", process.env.NODE_ENV);
+// console.log("Environment Variables:");
+// console.log("REACT_APP_STRIPE_KEY:", process.env.REACT_APP_STRIPE_KEY);
+// console.log("NODE_ENV:", process.env.NODE_ENV);
